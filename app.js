@@ -32,7 +32,7 @@ class UIManager {
         // Add app shell elements
         document.body.innerHTML = `
             <div class="app-header">
-                <h1>DeshDrawChat</h1>
+                <h1>CalebDrawChat</h1>
                 <div class="connection-status" id="connectionStatus"></div>
                 <button id="installPWA" class="hidden">Install App</button>
             </div>
@@ -234,7 +234,7 @@ class MessagingApp {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer API-KEY-HERE`
+                    'Authorization': `Bearer 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`
                 },
                 body: JSON.stringify({
                     model: "gpt-4o-mini",
@@ -249,7 +249,7 @@ class MessagingApp {
             this.addMessageToHistory('assistant', data.choices[0].message.content);
             this.saveMessageHistory();
         } catch (error) {
-            console.error('Error sending message to ChatGPT:', error);
+            console.error('Error sending message to ChatGPT:', error, data);
             this.addMessageToHistory('system', 'Error sending message to ChatGPT');
         }
     }
